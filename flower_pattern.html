@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Filters</title>
+	<meta charset="urf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/images/flower_pattern.png">
+	<meta name="description" content="Genrate a custom Flower pattern and download the same, inspired from SUNFLOWER">
+	<link href="mycss.css" rel="stylesheet">
+</head>
+<body class="flexcenter">
+<div class="fixed">Flower Pattern</div>
+<div class="card">
+	<div class="box"><canvas id="my_canvas"></canvas></div>
+	<div class="rightfix" onclick="downlaodcanvas(my_canvas)"></div>
+</div>
+<div class="cardfooter flexcenter">
+	<p id="showseeds">Seeds</p>
+	<input type="range" min=1 max=1000 step=1 value="240" class="slider" id="total_seeds" oninput="drawFlower(this.value),showseeds.innerHTML='Seeds : '+this.value">
+	<div class="coustam flexcenter" style="flex-direction:row;" radius="2" distance="4">
+	<input type="range" min=1 max=20 step=1 value="2" class="slider" oninput="seedRadius=this.value*1, this.parentElement.setAttribute('radius',seedRadius),drawFlower()">
+	<input type="range" min=1 max=10 step=1 value="4" class="slider" oninput="seedDistance=this.value*1, this.parentElement.setAttribute('distance',seedDistance), drawFlower()">
+	</div>
+	<div class="colors flexcenter" style="flex-direction:row;">
+		<div class="circle" style="background-image:linear-gradient(white 50%,black 50%)" onclick="fillcolor='white',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(yellow 50%,black 50%)" onclick="fillcolor='yellow',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(aqua 50%,black 50%)" onclick="fillcolor='aqua',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(deeppink 50%,black 50%)" onclick="fillcolor='deeppink',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(#4a26f9 50%,black 50%)" onclick="fillcolor='#4a26f9',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(#f9264e 50%,black 50%)" onclick="fillcolor='#f9264e',color='black',drawFlower()"></div>
+		<div class="circle" style="background-image:linear-gradient(rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 50%)" onclick="fillcolor='rgba(0,0,0,0.4)',color='rgba(0,0,0,0.4)',drawFlower()"></div>
+	</div>
+</div>
+<a id="source" target="_blank" alt="Sorce Code" href="https://github.com/rahul3v/flower_pattern">Sorce Code</a>
+<script src="flower_script.js"></script>
+</body>
+</html>
